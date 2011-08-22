@@ -1,0 +1,27 @@
+application: flowcloud
+version: beta1
+runtime: python
+api_version: 1
+
+handlers:
+
+- url: /crossdomain.xml
+  static_files: proxy_config.xml
+  upload: proxy_config.xml
+  secure: optional
+
+- url: /proxy
+  script: proxy.py
+  secure: optional
+
+- url: /flowcloud/
+  script: main.py
+  secure: optional
+    
+- url: /flowcloud
+  static_dir: art
+  secure: optional
+      
+- url: /(flowcloud)*(.*)
+  script: main.py
+  secure: optional
