@@ -1,4 +1,4 @@
-application: flowcloud
+application: wsflowcloud
 version: beta1
 runtime: python
 api_version: 1
@@ -14,14 +14,14 @@ handlers:
   script: proxy.py
   secure: optional
 
-- url: /flowcloud/
+- url: /wsflowcloud/
   script: main.py
   secure: optional
     
-- url: /flowcloud
+- url: /wsflowcloud
   static_dir: art
   secure: optional
       
-- url: /(flowcloud)*(.*)
+- url: /(wsflowcloud)*(.*)
   script: main.py
   secure: optional
