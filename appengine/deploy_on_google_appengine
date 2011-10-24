@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+rm -fr wsflowcloud &&\
+./generate.py build &&\
+./generate.py compress &&\
+mv build wsflowcloud &&\
+#find wsflowcloud -name '.svn' | xargs rm -fr &&\
+appcfg.py update wsflowcloud &&\
+rm -fr wsflowcloud &&\
+echo "w00t" &&\
+exit 0
+
+echo "UH OH!"
+exit 1
